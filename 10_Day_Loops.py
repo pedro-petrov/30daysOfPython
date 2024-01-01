@@ -97,9 +97,30 @@ for i in countries:
         print(i)"""
 
 #2. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
-fruits = ['banana', 'orange', 'mango', 'lemon']
+"""fruits = ['banana', 'orange', 'mango', 'lemon']
+reversed_fruits = []
 for i in fruits:
-    fruits.append(i)
-    print(fruits)
-    fruits.pop(fruits.index(i))
-    print(fruits)
+    reversed_fruits.insert(0, i)
+
+print(reversed_fruits)"""
+
+#3. Go to the data folder and use the countries_data.py file.
+#i. What are the total number of languages in the data
+#{'name': 'Zimbabwe', 'capital': 'Harare', 'languages': ['English', 'Shona', 'Northern Ndebele'],
+# 'population': 14240168, 'flag': 'https://restcountries.eu/data/zwe.svg', 'currency': 'Botswana pula'}
+from countries_data import countries
+"""all_languages = []
+for country in countries:
+    all_languages.extend(country.get("languages", []))
+unique_languages = len(set(all_languages))
+print(f"There are {unique_languages} unique languages.")"""
+
+#ii. Find the ten most spoken languages from the data
+language_population = {}
+for country in countries:
+    languages = country.get("languages", []) #using get() to retrieve the value of languages key from country list
+    population = country.get("population", 0) #using get() to retrieve the value of population key from country list
+    print(languages)
+    print(population)
+
+#iii. Find the 10 most populated countries in the world
